@@ -33,7 +33,7 @@ const staggerContainer = {
 
 export default function StorePage() {
   const params = useParams();
-  const store = storeLocations.find(s => s.id === params.id);
+  const store = storeLocations.find(s => s.id === (params?.id as string));
 
   if (!store) {
     return (

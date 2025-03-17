@@ -34,27 +34,26 @@
 }
 
 /* Custom Popup Styles */
-:global(.custom-popup .leaflet-popup-content-wrapper) {
+.custom-popup :global(.leaflet-popup-content-wrapper) {
   padding: 0;
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-:global(.custom-popup .leaflet-popup-content) {
+.custom-popup :global(.leaflet-popup-content) {
   margin: 0;
   width: auto !important;
 }
 
-:global(.custom-popup .leaflet-popup-tip) {
+.custom-popup :global(.leaflet-popup-tip) {
   background: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-:global(.custom-popup .leaflet-popup-tip-container) {
+.custom-popup :global(.leaflet-popup-tip-container) {
   margin-top: -1px;
 }
 
-:global(.custom-popup .leaflet-popup-close-button) {
+.custom-popup :global(.leaflet-popup-close-button) {
   display: none;
 } 
