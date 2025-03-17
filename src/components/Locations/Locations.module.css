@@ -1,0 +1,60 @@
+/* Base styles for all markers */
+.marker-icon-naga,
+.marker-icon-partido,
+.marker-icon-rinconada,
+.marker-icon-albay {
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.2));
+}
+
+/* Area-specific colors using blend modes */
+.marker-icon-naga {
+  filter: drop-shadow(0 0 6px rgba(239, 68, 68, 0.5));
+}
+
+.marker-icon-partido {
+  filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.5));
+}
+
+.marker-icon-rinconada {
+  filter: drop-shadow(0 0 6px rgba(16, 185, 129, 0.5));
+}
+
+.marker-icon-albay {
+  filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.5));
+}
+
+/* Hover effects */
+.marker-icon-naga:hover,
+.marker-icon-partido:hover,
+.marker-icon-rinconada:hover,
+.marker-icon-albay:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+}
+
+/* Custom Popup Styles */
+:global(.custom-popup .leaflet-popup-content-wrapper) {
+  padding: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+:global(.custom-popup .leaflet-popup-content) {
+  margin: 0;
+  width: auto !important;
+}
+
+:global(.custom-popup .leaflet-popup-tip) {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+:global(.custom-popup .leaflet-popup-tip-container) {
+  margin-top: -1px;
+}
+
+:global(.custom-popup .leaflet-popup-close-button) {
+  display: none;
+} 
