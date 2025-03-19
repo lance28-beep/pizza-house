@@ -166,7 +166,7 @@ export default function Hero() {
             >
               <div className="flex flex-row items-center gap-4 sm:gap-6">
                 <Link 
-                  href="/menu" 
+                  href="#delivery-partners" 
                   className="group bg-[#E32726] text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-base sm:text-lg font-bold hover:bg-red-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 border-2 border-white transform hover:-translate-y-1 whitespace-nowrap"
                 >
                   Order Now!
@@ -272,7 +272,9 @@ export default function Hero() {
                 transition={{ delay: 0.6, type: "spring", stiffness: 300 }}
                 whileHover={{ scale: 1.05, rotate: 0 }}
               >
-                Order Now!
+                <Link href="#delivery-partners" className="block">
+                  Order Now!
+                </Link>
               </motion.div>
             </div>
           </motion.div>
