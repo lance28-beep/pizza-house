@@ -13,7 +13,7 @@ const jobOpenings = [
       "Barangay Clearance",
       "High School Graduate or College Level"
     ],
-    image: "/img/careers/delivery-assistant.png",
+    image: "/careers/DeliveryAsst.png",
   },
   {
     title: "Baker",
@@ -29,7 +29,7 @@ const jobOpenings = [
       "Willing to render overtime",
       "Physical and Mentally fit"
     ],
-    image: "/img/careers/baker.png",
+    image: "/careers/Baker.png",
   },
   {
     title: "Service Crew",
@@ -40,7 +40,7 @@ const jobOpenings = [
       "Barangay Clearance",
       "High School Graduate or College Level"
     ],
-    image: "/img/careers/service-crew.png",
+    image: "/careers/ServiceCrew.png",
   }
 ];
 
@@ -268,18 +268,6 @@ export default function CareersPage() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="py-8 bg-[#E32726] text-white text-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center space-x-8">
-            <a href="https://www.facebook.com/pizzahaus.ph" className="text-lg font-medium hover:text-[#FFEB3B] transition-colors duration-300">Facebook</a>
-            <a href="https://www.instagram.com/pizzahausbicol" className="text-lg font-medium hover:text-[#4CAF50] transition-colors duration-300">Instagram</a>
-            <a href={`mailto:${contactInfo.email}`} className="text-lg font-medium hover:text-[#FFEB3B] transition-colors duration-300">Email</a>
-            <a href={`tel:${contactInfo.phone}`} className="text-lg font-medium hover:text-[#4CAF50] transition-colors duration-300">Call Us</a>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 } 

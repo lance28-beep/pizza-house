@@ -11,19 +11,19 @@ export default function AboutContent() {
           <div className="md:w-1/2">
             <h2 className="text-3xl md:text-4xl font-bold text-[#E32726] mb-6">Our Story</h2>
             <p className="text-gray-700 mb-4">
-              Pizza House was founded in 2010 with a simple mission: to make delicious pizza accessible to everyone. What started as a small family-owned restaurant has grown into a beloved chain with locations across the country.
+              Pizza Haus was founded in 2010 with a simple mission: to make delicious pizza accessible to everyone. What started as a small family-owned restaurant has grown into a beloved chain with locations across the country.
             </p>
             <p className="text-gray-700 mb-4">
               Our founder, Maria Rodriguez, learned the art of pizza-making from her Italian grandmother. She combined traditional techniques with innovative flavors to create our signature pizzas that customers have come to love.
             </p>
             <p className="text-gray-700">
-              Today, Pizza House continues to be a family-owned business, committed to quality ingredients, exceptional service, and affordable prices.
+              Today, Pizza Haus continues to be a family-owned business, committed to quality ingredients, exceptional service, and affordable prices.
             </p>
           </div>
           <div className="md:w-1/2 relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-xl">
             <Image
               src="/pizzas/about-story.jpg"
-              alt="Pizza House founder"
+              alt="Pizza Haus founder"
               fill
               className="object-cover"
             />
@@ -35,7 +35,7 @@ export default function AboutContent() {
           <div className="md:w-1/2">
             <h2 className="text-3xl md:text-4xl font-bold text-[#E32726] mb-6">Our Mission & Values</h2>
             <p className="text-gray-700 mb-4">
-              At Pizza House, our mission is to bring people together through delicious, affordable food. We believe that everyone deserves to enjoy a great pizza without breaking the bank.
+              At Pizza Haus, our mission is to bring people together through delicious, affordable food. We believe that everyone deserves to enjoy a great pizza without breaking the bank.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
               <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-[#E32726]">
@@ -59,7 +59,7 @@ export default function AboutContent() {
           <div className="md:w-1/2 relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-xl">
             <Image
               src="/pizzas/about-mission.jpg"
-              alt="Pizza House team"
+              alt="Pizza Haus team"
               fill
               className="object-cover"
             />
@@ -71,7 +71,7 @@ export default function AboutContent() {
           <div className="md:w-1/2">
             <h2 className="text-3xl md:text-4xl font-bold text-[#E32726] mb-6">Join Our Family</h2>
             <p className="text-gray-700 mb-4">
-              Pizza House is rapidly expanding, and we're looking for passionate entrepreneurs to join our franchise family. With our proven business model, comprehensive training, and ongoing support, you can be part of our success story.
+              Pizza Haus is rapidly expanding, and we're looking for passionate entrepreneurs to join our franchise family. With our proven business model, comprehensive training, and ongoing support, you can be part of our success story.
             </p>
             <p className="text-gray-700 mb-6">
               Our franchisees benefit from our established brand, efficient operations, and marketing support. We work closely with each franchise owner to ensure their success.
@@ -86,7 +86,7 @@ export default function AboutContent() {
           <div className="md:w-1/2 relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-xl">
             <Image
               src="/pizzas/about-franchise.jpg"
-              alt="Pizza House franchise"
+              alt="Pizza Haus franchise"
               fill
               className="object-cover"
             />

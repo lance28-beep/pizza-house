@@ -49,10 +49,10 @@ const itemVariants = {
 
 export default function Hero() {
   return (
-    <section className="relative bg-[#FFD700] overflow-hidden min-h-screen">
+    <section className="relative bg-[#FFD700] overflow-hidden min-h-[calc(100vh-4rem)] sm:min-h-screen">
       {/* Enhanced Background with Sunburst Effect */}
       <div className="absolute inset-0" style={{
-        background: `radial-gradient(circle at center, #FFD700 0%, #FFC700 100%)`,
+        backgroundImage: `radial-gradient(circle at center, #FFD700 0%, #FFC700 100%)`,
         backgroundSize: '100% 100%'
       }}>
         <motion.div 
@@ -61,17 +61,17 @@ export default function Hero() {
           animate={{ rotate: 360 }}
           transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
           style={{
-            background: `repeating-conic-gradient(from 0deg, rgba(255, 255, 255, 0.1) 0deg 10deg, transparent 10deg 20deg)`,
+            backgroundImage: `repeating-conic-gradient(from 0deg, rgba(255, 255, 255, 0.1) 0deg 10deg, transparent 10deg 20deg)`,
             backgroundSize: '100% 100%'
           }}
         />
       </div>
 
-      {/* Optimized Fiesta Decorative Elements */}
+      {/* Optimized Fiesta Decorative Elements - Hidden on mobile */}
       {fiestaElements.map((element, index) => (
         <motion.div
           key={index}
-          className="absolute hidden md:block transform-gpu"
+          className="absolute hidden lg:block transform-gpu"
           style={{
             left: `${element.x}%`,
             top: `${element.y}%`,
@@ -86,7 +86,7 @@ export default function Hero() {
               {[...Array(5)].map((_, i) => (
                 <div
                   key={i}
-                  className="w-8 h-6 mx-0.5 transform rotate-45 transition-transform hover:rotate-0 duration-300"
+                  className="w-6 sm:w-8 h-4 sm:h-6 mx-0.5 transform rotate-45 transition-transform hover:rotate-0 duration-300"
                   style={{
                     backgroundColor: ['#E32726', '#2B8A3E', '#FFEB3B', '#1E88E5', '#FFA726'][i % 5],
                     clipPath: 'polygon(50% 0%, 100% 100%, 0% 100%)'
@@ -104,20 +104,20 @@ export default function Hero() {
         </motion.div>
       ))}
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12 relative z-10">
         <motion.div 
-          className="flex flex-col md:flex-row items-center justify-between"
+          className="flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 lg:gap-12"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           {/* Enhanced Text Content */}
           <motion.div 
-            className="md:w-5/12 text-left mb-8 md:mb-0 space-y-6"
+            className="lg:w-5/12 text-center lg:text-left mb-6 sm:mb-8 lg:mb-0 space-y-4 sm:space-y-6"
             variants={itemVariants}
           >
             <motion.span 
-              className="inline-block px-6 py-2 bg-[#E32726] text-white rounded-full text-lg font-bold shadow-lg transform -rotate-2 hover:rotate-0 transition-transform duration-300"
+              className="inline-block px-4 sm:px-6 py-1.5 sm:py-2 bg-[#E32726] text-white rounded-full text-base sm:text-lg font-bold shadow-lg transform -rotate-2 hover:rotate-0 transition-transform duration-300"
               whileHover={{ scale: 1.05 }}
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
@@ -126,7 +126,7 @@ export default function Hero() {
               #1 Pizza sa Bicol Region
             </motion.span>
 
-            <h1 className="text-6xl md:text-7xl font-extrabold leading-none">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-none">
               <motion.span 
                 className="block text-[#E32726] drop-shadow-sm"
                 variants={itemVariants}
@@ -140,7 +140,7 @@ export default function Hero() {
                 Abot-Kaya
               </motion.span>
               <motion.span 
-                className="block text-[#E32726] text-5xl mt-2"
+                className="block text-[#E32726] text-3xl sm:text-4xl md:text-5xl mt-2"
                 variants={itemVariants}
               >
                 Premium Pizza
@@ -148,75 +148,77 @@ export default function Hero() {
             </h1>
 
             <motion.p 
-              className="text-xl text-[#2B8A3E] font-bold"
+              className="text-lg sm:text-xl text-[#2B8A3E] font-bold"
               variants={itemVariants}
             >
               Siguradong Mapapasaya ang Buong Pamilya!
-              <span className="block text-[#E32726] text-2xl font-extrabold mt-2">
+              <span className="block text-[#E32726] text-xl sm:text-2xl font-extrabold mt-2">
                 Barato Na! Masiram Pa!
               </span>
-              <span className="block text-[#E32726] text-3xl font-black mt-3 italic">
+              <span className="block text-[#E32726] text-2xl sm:text-3xl font-black mt-2 sm:mt-3 italic">
                 Siguradong Babalik-balikan!
               </span>
             </motion.p>
 
             <motion.div 
-              className="flex flex-wrap gap-4 mb-12"
+              className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 sm:gap-4 mb-8 sm:mb-12"
               variants={itemVariants}
             >
-              <Link 
-                href="/menu" 
-                className="group bg-[#E32726] text-white px-8 py-4 rounded-full text-xl font-bold hover:bg-red-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 border-2 border-white transform hover:-translate-y-1"
-              >
-                Order Now!
-                <motion.svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  className="h-6 w-6 transform group-hover:translate-x-1 transition-transform" 
-                  viewBox="0 0 20 20" 
-                  fill="currentColor"
+              <div className="flex flex-row items-center gap-4 sm:gap-6">
+                <Link 
+                  href="/menu" 
+                  className="group bg-[#E32726] text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-base sm:text-lg font-bold hover:bg-red-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 border-2 border-white transform hover:-translate-y-1 whitespace-nowrap"
                 >
-                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                </motion.svg>
-              </Link>
-              <Link 
-                href="/franchise" 
-                className="group bg-[#2B8A3E] text-white px-8 py-4 rounded-full text-xl font-bold hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 border-2 border-white transform hover:-translate-y-1"
-              >
-                Start a Franchise!
-                <motion.svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  className="h-6 w-6 transform group-hover:scale-110 transition-transform" 
-                  viewBox="0 0 20 20" 
-                  fill="currentColor"
+                  Order Now!
+                  <motion.svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    className="h-4 w-4 sm:h-5 sm:w-5 transform group-hover:translate-x-1 transition-transform" 
+                    viewBox="0 0 20 20" 
+                    fill="currentColor"
+                  >
+                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </motion.svg>
+                </Link>
+                <Link 
+                  href="/franchise" 
+                  className="group bg-[#2B8A3E] text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-base sm:text-lg font-bold hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 border-2 border-white transform hover:-translate-y-1 whitespace-nowrap"
                 >
-                  <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-                </motion.svg>
-              </Link>
+                  Start a Franchise
+                  <motion.svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    className="h-4 w-4 sm:h-5 sm:w-5 transform group-hover:scale-110 transition-transform" 
+                    viewBox="0 0 20 20" 
+                    fill="currentColor"
+                  >
+                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+                  </motion.svg>
+                </Link>
+              </div>
             </motion.div>
 
             <motion.div 
-              className="flex gap-8"
+              className="flex justify-center lg:justify-start gap-4 sm:gap-8"
               variants={itemVariants}
             >
-              <div className="bg-white/90 backdrop-blur-sm px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                <span className="text-4xl font-extrabold text-[#E32726] block">25+</span>
-                <span className="text-sm font-bold text-[#2B8A3E]">Branches</span>
+              <div className="bg-white/90 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                <span className="text-3xl sm:text-4xl font-extrabold text-[#E32726] block">25+</span>
+                <span className="text-xs sm:text-sm font-bold text-[#2B8A3E]">Branches</span>
               </div>
-              <div className="bg-white/90 backdrop-blur-sm px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                <span className="text-4xl font-extrabold text-[#E32726] block">15k+</span>
-                <span className="text-sm font-bold text-[#2B8A3E]">Happy Customers</span>
+              <div className="bg-white/90 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                <span className="text-3xl sm:text-4xl font-extrabold text-[#E32726] block">15k+</span>
+                <span className="text-xs sm:text-sm font-bold text-[#2B8A3E]">Happy Customers</span>
               </div>
             </motion.div>
           </motion.div>
 
           {/* Enhanced Pizza Image Section */}
           <motion.div 
-            className="md:w-7/12 relative"
+            className="lg:w-7/12 relative w-full"
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
           >
-            <div className="relative w-full aspect-square">
+            <div className="relative w-full aspect-square max-w-[500px] mx-auto">
               {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-yellow-500/10 to-transparent pointer-events-none z-10" />
               
@@ -228,11 +230,11 @@ export default function Hero() {
                 priority
               />
               
-              {/* Enhanced Pizza Flavor Tags */}
+              {/* Enhanced Pizza Flavor Tags - Hidden on mobile */}
               {pizzaFlavors.map((flavor, index) => (
                 <motion.div
                   key={index}
-                  className="absolute hidden md:block transform-gpu"
+                  className="absolute hidden lg:block transform-gpu"
                   style={{
                     left: `${flavor.x}%`,
                     top: `${flavor.y}%`,
@@ -244,7 +246,7 @@ export default function Hero() {
                   whileHover={{ scale: 1.05, rotate: 0 }}
                 >
                   <span 
-                    className="bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-lg text-sm font-bold shadow-lg inline-block transition-all duration-300 hover:shadow-xl"
+                    className="bg-white/90 backdrop-blur-sm px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg text-xs sm:text-sm font-bold shadow-lg inline-block transition-all duration-300 hover:shadow-xl"
                     style={{ color: flavor.color }}
                   >
                     {flavor.text}
@@ -254,7 +256,7 @@ export default function Hero() {
 
               {/* Enhanced Main Tags */}
               <motion.div 
-                className="absolute top-5 right-5 bg-[#E32726] text-white px-8 py-3 rounded-full text-xl font-extrabold shadow-xl transform -rotate-12 border-3 border-white z-30"
+                className="absolute top-2 sm:top-5 right-2 sm:right-5 bg-[#E32726] text-white px-4 sm:px-8 py-2 sm:py-3 rounded-full text-base sm:text-xl font-extrabold shadow-xl transform -rotate-12 border-2 sm:border-3 border-white z-30"
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.4, type: "spring", stiffness: 300 }}
@@ -264,7 +266,7 @@ export default function Hero() {
               </motion.div>
 
               <motion.div 
-                className="absolute bottom-16 left-8 bg-[#2B8A3E] text-white px-8 py-3 rounded-full text-xl font-extrabold shadow-xl transform rotate-12 border-3 border-white z-30"
+                className="absolute bottom-8 sm:bottom-16 left-4 sm:left-8 bg-[#2B8A3E] text-white px-4 sm:px-8 py-2 sm:py-3 rounded-full text-base sm:text-xl font-extrabold shadow-xl transform rotate-12 border-2 sm:border-3 border-white z-30"
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.6, type: "spring", stiffness: 300 }}
