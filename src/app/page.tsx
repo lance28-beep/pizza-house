@@ -8,6 +8,7 @@ import { Dialog } from '@headlessui/react';
 import { useState, useEffect } from "react";
 import Hero from "./components/Hero";
 import DeliveryPartners from "./components/DeliveryPartners";
+import CountUp from './components/CountUp';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -573,28 +574,36 @@ export default function HomePage() {
               className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg text-center"
               whileHover={{ y: -4 }}
             >
-              <div className="text-3xl sm:text-4xl font-bold text-[#E32726] mb-2">25+</div>
+              <div className="text-3xl sm:text-4xl font-bold text-[#E32726] mb-2">
+                <CountUp from={0} to={25} duration={2} delay={0.2} separator="+" />
+              </div>
               <div className="text-gray-600 font-medium">Branches</div>
             </motion.div>
             <motion.div 
               className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg text-center"
               whileHover={{ y: -4 }}
             >
-              <div className="text-3xl sm:text-4xl font-bold text-[#E32726] mb-2">15k+</div>
+              <div className="text-3xl sm:text-4xl font-bold text-[#E32726] mb-2">
+                <CountUp from={0} to={15000} duration={2.5} delay={0.4} separator="," />
+              </div>
               <div className="text-gray-600 font-medium">Happy Customers</div>
             </motion.div>
             <motion.div 
               className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg text-center"
               whileHover={{ y: -4 }}
             >
-              <div className="text-3xl sm:text-4xl font-bold text-[#E32726] mb-2">20+</div>
+              <div className="text-3xl sm:text-4xl font-bold text-[#E32726] mb-2">
+                <CountUp from={0} to={20} duration={2} delay={0.6} separator="+" />
+              </div>
               <div className="text-gray-600 font-medium">Pizza Varieties</div>
             </motion.div>
             <motion.div 
               className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg text-center"
               whileHover={{ y: -4 }}
             >
-              <div className="text-3xl sm:text-4xl font-bold text-[#E32726] mb-2">4.9</div>
+              <div className="text-3xl sm:text-4xl font-bold text-[#E32726] mb-2">
+                <CountUp from={0} to={4.9} duration={2} delay={0.8} />
+              </div>
               <div className="text-gray-600 font-medium">Customer Rating</div>
             </motion.div>
           </div>

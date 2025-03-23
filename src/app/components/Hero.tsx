@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import CountUp from './CountUp';
 
 // Fiesta decorative elements with improved positioning
 const fiestaElements = [
@@ -201,11 +202,15 @@ export default function Hero() {
               variants={itemVariants}
             >
               <div className="bg-white/90 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                <span className="text-3xl sm:text-4xl font-extrabold text-[#E32726] block">25+</span>
+                <span className="text-3xl sm:text-4xl font-extrabold text-[#E32726] block">
+                  <CountUp from={0} to={25} duration={2} delay={0.5} separator="+" />
+                </span>
                 <span className="text-xs sm:text-sm font-bold text-[#2B8A3E]">Branches</span>
               </div>
               <div className="bg-white/90 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                <span className="text-3xl sm:text-4xl font-extrabold text-[#E32726] block">15k+</span>
+                <span className="text-3xl sm:text-4xl font-extrabold text-[#E32726] block">
+                  <CountUp from={0} to={15000} duration={2.5} delay={0.8} separator="," />
+                </span>
                 <span className="text-xs sm:text-sm font-bold text-[#2B8A3E]">Happy Customers</span>
               </div>
             </motion.div>

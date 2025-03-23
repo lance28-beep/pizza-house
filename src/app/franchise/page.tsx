@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import FranchiseMarquee from '../components/FranchiseMarquee';
+import Stack from '../components/Stack';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -631,67 +632,26 @@ export default function FranchisePage() {
                   </div>
                 </div>
 
-                {/* Right Column - Visual Showcase */}
-                <div className="relative h-[40vh] md:h-full">
-                  <div className="sticky top-0 h-full overflow-hidden">
-                    {/* Background Pattern */}
-                    <div className={`absolute inset-0 opacity-10 ${
-                      selectedPackage === 'takeout'
-                        ? 'bg-gradient-to-br from-red-600 to-red-300'
-                        : 'bg-gradient-to-br from-green-600 to-green-300'
-                    }`} />
-
-                    {/* Main Image Container */}
-                    <div className="relative w-full h-full">
-                      <div className="absolute inset-0">
-                        <Image
-                          src={selectedPackage === 'takeout'
-                            ? "/images/Take-Out_Counter_Package-img.png"
-                            : "/images/Full_Dine_Package-img.png"}
-                          alt={selectedPackage === 'takeout' ? "Take-Out Counter" : "Full Dine Store"}
-                          fill
-                          className="object-contain"
-                          sizes="(max-width: 768px) 100vw, 50vw"
-                        />
-                      </div>
-                      
-                      {/* Overlay Content */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
-                        <div className="absolute bottom-0 left-0 right-0 p-8">
-                          {/* Feature Highlights */}
-                          <div className="grid grid-cols-3 gap-4 mb-8">
-                            {[
-                              { icon: "🏪", label: selectedPackage === 'takeout' ? "Quick Setup" : "Full Restaurant" },
-                              { icon: "⚡", label: selectedPackage === 'takeout' ? "Fast ROI" : "Premium Experience" },
-                              { icon: "📈", label: "High Profit Potential" }
-                            ].map((feature, idx) => (
-                              <motion.div
-                                key={idx}
-                                className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center"
-                                whileHover={{ scale: 1.05 }}
-                              >
-                                <div className="text-2xl mb-2">{feature.icon}</div>
-                                <div className="text-white text-sm">{feature.label}</div>
-                              </motion.div>
-                            ))}
-                          </div>
-
-                          {/* Package Stats */}
-                          <div className="grid grid-cols-2 gap-4">
-                            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                              <div className="text-white/80 text-sm">Investment Return</div>
-                              <div className="text-white font-bold text-xl">12-18 months</div>
-                            </div>
-                            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                              <div className="text-white/80 text-sm">Success Rate</div>
-                              <div className="text-white font-bold text-xl">100%</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                {/* Right Column - Stack Component */}
+                <motion.div 
+                  variants={fadeIn}
+                  className="flex justify-center items-center"
+                >
+                  <div className="relative w-full max-w-[500px] min-h-[400px]">
+                    <Stack
+                      randomRotation={true}
+                      sensitivity={180}
+                      sendToBackOnClick={false}
+                      cardDimensions={{ width: 500, height: 350 }}
+                      cardsData={[1, 2, 3, 4].map((index) => ({
+                        id: index,
+                        img: `/franchiseStore/img${index}.png`
+                      }))}
+                      animationConfig={{ stiffness: 300, damping: 30 }}
+                      autoTransitionInterval={5000}
+                    />
                   </div>
-                </div>
+                </motion.div>
               </div>
             </motion.div>
           </div>
@@ -719,7 +679,8 @@ export default function FranchisePage() {
 
       {/* Join Our Expansion Section */}
       <section className="py-20 px-4 md:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/pattern.png')] opacity-10" />
+        <div className="absolute inset-0 opacity-100" />
+        <div className="absolute inset-0 bg-[url('/images/pizza-pattern.png')] opacity-10" />
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -741,9 +702,10 @@ export default function FranchisePage() {
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Why Join Our Expansion */}
             <motion.div
               variants={scaleIn}
-              className="bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/20"
+              className="bg-white rounded-3xl p-8 shadow-xl"
             >
               <h3 className="text-2xl font-bold mb-6 text-gray-900">Why Join Our Expansion?</h3>
               <ul className="space-y-4">
@@ -756,47 +718,45 @@ export default function FranchisePage() {
                   "Regular menu updates and innovation"
                 ].map((item, index) => (
                   <li key={index} className="flex items-start space-x-3">
-                    <svg className="w-6 h-6 text-[#E32726] mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-[#E32726] mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-gray-700">{item}</span>
+                    <span className="text-gray-700 text-base">{item}</span>
                   </li>
                 ))}
               </ul>
-            </motion.div>
 
-            <motion.div
-              variants={scaleIn}
-              className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl"
-            >
-              <motion.div
-                key={currentImageIndex}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
-                className="absolute inset-0"
-              >
-                <Image
-                  src={franchiseImages[currentImageIndex]}
-                  alt={`Franchise Store ${currentImageIndex + 1}`}
-                  fill
-                  className="object-cover"
-                />
-              </motion.div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                <h3 className="text-2xl font-bold mb-4">Ready to Start Your Journey?</h3>
-                <p className="mb-6">Join our family of successful franchise owners and be part of our growing legacy.</p>
+              <div className="mt-8">
                 <Link
-                  href="/franchise"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-[#E32726] text-white rounded-full font-semibold hover:bg-[#C41E1E] transition-colors"
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-[#E32726] text-white rounded-full font-semibold hover:bg-[#C41E1E] transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
-                  Apply Now
+                  Start Your Journey
                   <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </Link>
+              </div>
+            </motion.div>
+
+            {/* Right Column - Stack Component */}
+            <motion.div 
+              variants={fadeIn}
+              className="flex justify-center items-center"
+            >
+              <div className="relative w-full max-w-[500px] min-h-[400px]">
+                <Stack
+                  randomRotation={true}
+                  sensitivity={180}
+                  sendToBackOnClick={false}
+                  cardDimensions={{ width: 500, height: 350 }}
+                  cardsData={[1, 2, 3, 4].map((index) => ({
+                    id: index,
+                    img: `/franchiseStore/img${index}.png`
+                  }))}
+                  animationConfig={{ stiffness: 300, damping: 30 }}
+                  autoTransitionInterval={5000}
+                />
               </div>
             </motion.div>
           </div>
