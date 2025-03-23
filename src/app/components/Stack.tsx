@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useTransform, PanInfo } from "framer-motion";
-import { useState, ReactNode, useEffect } from "react";
+import { useState, ReactNode } from "react";
 import Image from "next/image";
 
 interface CardRotateProps {
@@ -53,7 +53,6 @@ interface StackProps {
   cardsData?: Card[];
   animationConfig?: { stiffness: number; damping: number };
   sendToBackOnClick?: boolean;
-  autoTransitionInterval?: number;
 }
 
 export default function Stack({
@@ -62,8 +61,7 @@ export default function Stack({
   cardDimensions = { width: 208, height: 208 },
   cardsData = [],
   animationConfig = { stiffness: 260, damping: 20 },
-  sendToBackOnClick = false,
-  autoTransitionInterval = 5000
+  sendToBackOnClick = false
 }: StackProps) {
   const [cards, setCards] = useState<Card[]>(
     cardsData.length
@@ -86,19 +84,6 @@ export default function Stack({
     });
   };
 
-  // Auto transition effect
-  useEffect(() => {
-    if (autoTransitionInterval > 0) {
-      const interval = setInterval(() => {
-        if (cards.length > 0) {
-          sendToBack(cards[cards.length - 1].id);
-        }
-      }, autoTransitionInterval);
-
-      return () => clearInterval(interval);
-    }
-  }, [cards, autoTransitionInterval]);
-
   return (
     <div
       className="relative"
@@ -120,7 +105,7 @@ export default function Stack({
             sensitivity={sensitivity}
           >
             <motion.div
-              className="rounded-2xl overflow-hidden border-4 border-white/30 bg-white/10 backdrop-blur-sm"
+              className="rounded-2xl overflow-hidden border-4 border-white"
               onClick={() => sendToBackOnClick && sendToBack(card.id)}
               animate={{
                 rotateZ: (cards.length - index - 1) * 4 + randomRotate,
