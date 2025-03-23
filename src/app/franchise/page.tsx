@@ -720,13 +720,13 @@ export default function FranchisePage() {
       </section>
 
       {/* Join Our Expansion Section */}
-      <section className="py-20 px-4 md:px-8 relative overflow-hidden">
+      <section className="py-12 sm:py-20 px-4 sm:px-8 relative overflow-hidden">
         {/* Enhanced Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#FF6634] to-[#FF8B34]" />
         <div className="absolute inset-0 bg-[url('/images/pizza-pattern.png')] opacity-10" />
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-yellow-400/20 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#E32726]/20 rounded-full blur-3xl animate-pulse delay-1000" />
+          <div className="absolute top-0 left-1/4 w-48 sm:w-96 h-48 sm:h-96 bg-yellow-400/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-0 right-1/4 w-48 sm:w-96 h-48 sm:h-96 bg-[#E32726]/20 rounded-full blur-3xl animate-pulse delay-1000" />
         </div>
 
         <motion.div
@@ -738,39 +738,39 @@ export default function FranchisePage() {
         >
           <motion.div 
             variants={fadeIn}
-            className="text-center mb-16"
+            className="text-center mb-8 sm:mb-16 px-4"
           >
             <motion.span 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-block text-yellow-400 text-lg font-semibold mb-4 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm"
+              className="inline-block text-yellow-400 text-base sm:text-lg font-semibold mb-3 sm:mb-4 px-4 py-1.5 sm:py-2 rounded-full bg-white/10 backdrop-blur-sm"
             >
               Join Our Journey
             </motion.span>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
               Be Part of Our Growing Success
             </h2>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto px-4">
               Join us as we continue to expand and bring the authentic taste of Pizza Haus to more communities
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-12 items-center">
             {/* Left Column - Why Join Our Expansion */}
             <motion.div
               variants={scaleIn}
-              className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-shadow duration-300"
+              className="bg-white/95 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-shadow duration-300"
             >
-              <h3 className="text-2xl font-bold mb-8 text-gray-900 flex items-center">
-                <span className="bg-gradient-to-r from-[#E32726] to-[#FF6634] text-white p-2 rounded-lg mr-3">
-                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-gray-900 flex items-center">
+                <span className="bg-gradient-to-r from-[#E32726] to-[#FF6634] text-white p-1.5 sm:p-2 rounded-lg mr-3">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </span>
                 Why Join Our Expansion?
               </h3>
-              <ul className="space-y-5">
+              <ul className="space-y-4 sm:space-y-5">
                 {[
                   "Proven business model with consistent growth",
                   "Comprehensive training and ongoing support",
@@ -786,27 +786,27 @@ export default function FranchisePage() {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#E32726]/10 flex items-center justify-center">
-                      <svg className="w-4 h-4 text-[#E32726]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#E32726]/10 flex items-center justify-center mt-0.5">
+                      <svg className="w-3 h-3 sm:w-4 sm:h-4 text-[#E32726]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-gray-700 text-base">{item}</span>
+                    <span className="text-sm sm:text-base text-gray-700">{item}</span>
                   </motion.li>
                 ))}
               </ul>
 
               <motion.div 
-                className="mt-8"
+                className="mt-6 sm:mt-8"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center w-full px-6 py-4 bg-gradient-to-r from-[#E32726] to-[#FF6634] text-white rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="inline-flex items-center justify-center w-full px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-[#E32726] to-[#FF6634] text-white rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-sm sm:text-base"
                 >
                   Start Your Journey
-                  <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </Link>
@@ -816,15 +816,20 @@ export default function FranchisePage() {
             {/* Right Column - Enhanced Stack Component */}
             <motion.div 
               variants={fadeIn}
-              className="flex justify-center items-center h-[500px]"
+              className="flex justify-center items-center h-[300px] sm:h-[400px] md:h-[500px] mt-6 sm:mt-0"
             >
-              <div className="relative w-full max-w-[500px]">
+              <div className="relative w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px]">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#E32726]/20 to-yellow-400/20 rounded-3xl blur-3xl" />
                 <AutoRotatingStack
                   randomRotation={true}
                   sensitivity={180}
                   sendToBackOnClick={false}
-                  cardDimensions={{ width: 500, height: 400 }}
+                  cardDimensions={{ 
+                    width: typeof window !== 'undefined' && window.innerWidth < 640 ? 300 : 
+                           typeof window !== 'undefined' && window.innerWidth < 768 ? 400 : 500,
+                    height: typeof window !== 'undefined' && window.innerWidth < 640 ? 225 : 
+                            typeof window !== 'undefined' && window.innerWidth < 768 ? 300 : 400
+                  }}
                   cardsData={[1, 2, 3, 4].map((index) => ({
                     id: index,
                     img: `/franchiseStore/img${index}.png`

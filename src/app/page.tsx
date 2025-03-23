@@ -312,7 +312,7 @@ export default function HomePage() {
                     </li>
                   </ul>
                   <Link 
-                    href="#delivery-partners" 
+                    href="/menu" 
                     className="block w-full bg-[#E32726] text-white text-center py-3.5 rounded-xl font-bold hover:bg-red-700 transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
                   >
                     View All Flavors
@@ -371,7 +371,7 @@ export default function HomePage() {
                     </li>
                   </ul>
                   <Link 
-                    href="#delivery-partners" 
+                    href="/menu" 
                     className="block w-full bg-[#E32726] text-white text-center py-3.5 rounded-xl font-bold hover:bg-red-700 transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
                   >
                     View All Flavors
@@ -430,7 +430,7 @@ export default function HomePage() {
                     </li>
                   </ul>
                   <Link 
-                    href="#delivery-partners" 
+                    href="/menu" 
                     className="block w-full bg-[#E32726] text-white text-center py-3.5 rounded-xl font-bold hover:bg-red-700 transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
                   >
                     View All Flavors
@@ -776,7 +776,7 @@ export default function HomePage() {
             variants={fadeIn}
           >
             <Link 
-              href="#delivery-partners"
+              href="/menu"
               className="inline-flex items-center justify-center bg-[#E32726] text-white hover:bg-red-700 px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 shadow-md hover:shadow-xl gap-3 transform hover:scale-105"
             >
               <span>Create Your Own Pizza Moments</span>
